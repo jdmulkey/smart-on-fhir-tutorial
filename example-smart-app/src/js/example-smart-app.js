@@ -61,11 +61,12 @@
     }
 
     function getIndirectRoomUrl(callback) {
+        console.log(ehrId);
         var sha256 = new Hashes.SHA256;
         jQuery.support.cors = true;
         try {
             $.ajax({
-                url: '' + "api/Vidyo/PatientRoomUrl/" + sha256.hex('' + patientId) + "/" + ehrId + "/" + cernerUserId,
+                url: 'https://afhcan-core-qa4.test.afhcan.org/' + "api/Vidyo/PatientRoomUrl/" + sha256.hex('' + patientId) + "/" + ehrId + "/" + cernerUserId,
                 beforeSend: function (xhr) {
                     var hashStr = "Basic " + Base64.encode(ehrId + ":" + Base64.decode(ehrPassword));
                     xhr.setRequestHeader('Authorization', hashStr);
@@ -87,7 +88,7 @@
             console.log("Connection to core failed :" + e);
         }
     }
-    
+
     function copyToClipboard(text) {
         if (window.clipboardData && window.clipboardData.setData) {
             // IE specific code path to prevent textarea being shown while dialog is visible.
@@ -111,8 +112,8 @@
 
     var cernerUserId = '123';
     var patientId = '';
-    var ehrId = '';
-    var ehrPassword = '';
+    var ehrId = 'afa02652-7de2-4af3-a71d-85ae608ed354';
+    var ehrPassword = 'P@ssw0rd';
 
     window.getLink = function () {
         getIndirectRoomUrl(copyLinkToClipboardAndReport);
