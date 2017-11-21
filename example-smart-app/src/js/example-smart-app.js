@@ -66,11 +66,7 @@
         jQuery.support.cors = true;
         try {
             $.ajax({
-                url: 'https://afhcan-core-qa4.test.afhcan.org/' + "api/Vidyo/PatientRoomUrl/" + sha256.hex('' + patientId) + "/" + ehrId + "/" + cernerUserId,
-                beforeSend: function (xhr) {
-                    var hashStr = "Basic " + Base64.encode(ehrId + ":" + Base64.decode(ehrPassword));
-                    xhr.setRequestHeader('Authorization', hashStr);
-                },
+                url: 'https://afhcan-core-josh.azurewebsites.net/' + "api/Vidyo/PatientRoomUrl/" + sha256.hex('' + patientId) + "/" + ehrId + "/" + cernerUserId,
                 type: "GET",
                 success: function (link) {
                     if (link.length == 0) {
@@ -112,8 +108,6 @@
 
     var cernerUserId = '123';
     var patientId = '';
-    var ehrId = 'afa02652-7de2-4af3-a71d-85ae608ed354';
-    var ehrPassword = 'P@ssw0rd';
 
     window.getLink = function () {
         getIndirectRoomUrl(copyLinkToClipboardAndReport);
