@@ -1,6 +1,4 @@
 (function (window) {
-
-    $('#container').hide();
     document.getElementById('afhcan-cerner-version').innerHTML = 'Version: VPR SMART FHIR';
 
     // Hide the inline alert whenever the window is clicked on.
@@ -49,10 +47,8 @@
 
         FHIR.oauth2.ready(onReady, onError);
         return ret.promise();
-
     };
 
-    
     function copyLinkToClipboardAndReport(link) {
         copyToClipboard('Click the following link to join your virtual patient room:\r\n' + link);
         document.getElementById('alertDescriptionSpan').innerHTML = 'Invitation link has been copied to the clipboard.  Use CTRL-V to paste into a message.';
@@ -60,7 +56,6 @@
         $('#inlineAlertDiv').slideDown();
     }
 
-    
     function launchLink(link) {
         APPLINK(100, link, '');
     }
@@ -92,7 +87,7 @@
             console.log("Connection to core failed :" + e);
         }
     }
-
+    
     function copyToClipboard(text) {
         if (window.clipboardData && window.clipboardData.setData) {
             // IE specific code path to prevent textarea being shown while dialog is visible.
@@ -127,19 +122,9 @@
         getIndirectRoomUrl(launchLink);
     };
 
-    window.drawVisualization = function (p) {
+    window.drawVisualization = function () {
+        console.log('drawVisualization');
         $('#container').show();
         $('#loading').hide();
-        /*$('#fname').html(p.fname);
-        $('#lname').html(p.lname);
-        $('#gender').html(p.gender);
-        $('#birthdate').html(p.birthdate);
-        $('#age').html(p.age);
-        $('#height').html(p.height);
-        $('#systolicbp').html(p.systolicbp);
-        $('#diastolicbp').html(p.diastolicbp);
-        $('#ldl').html(p.ldl);
-        $('#hdl').html(p.hdl);*/
     };
-
 })(window);
