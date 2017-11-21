@@ -125,7 +125,7 @@
 
     window.drawVisualization = function () {
         console.log('drawVisualization');
-        $('#container').show();
+        $('#vprDiv').show();
         $('#loading').hide();
     };
 })(window);
