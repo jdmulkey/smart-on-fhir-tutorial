@@ -1,4 +1,7 @@
 (function(window){
+  
+  document.getElementById('afhcan-cerner-version').innerHTML = 'VPR SMART FHIR';
+  
   window.extractData = function() {
     var ret = $.Deferred();
 
