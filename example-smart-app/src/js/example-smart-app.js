@@ -57,8 +57,8 @@
     }
 
     function launchLink(link) {
-        console.log(link);
-        window.open(link);
+        newWindow.location = link;
+        newWindow.focus();
     }
 
     function getIndirectRoomUrl(callback) {
@@ -110,17 +110,18 @@
     var cernerUserId = '123';
     var patientId = '';
     var ehrId = '456';
+    var newWindow = null;
 
     window.getLink = function () {
         getIndirectRoomUrl(copyLinkToClipboardAndReport);
     };
 
     window.getLinkAndLaunch = function () {
+        newWindow = window.open("", "_blank");
         getIndirectRoomUrl(launchLink);
     };
 
     window.drawVisualization = function () {
-        console.log('drawVisualization');
         $('#vprDiv').show();
         $('#loading').hide();
     };
