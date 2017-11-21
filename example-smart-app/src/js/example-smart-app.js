@@ -57,7 +57,8 @@
     }
 
     function launchLink(link) {
-        APPLINK(100, link, '');
+        var win = window.open(link, '_blank');
+        win.focus();
     }
 
     function getIndirectRoomUrl(callback) {
