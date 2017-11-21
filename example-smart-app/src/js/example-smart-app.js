@@ -108,6 +108,7 @@
 
     var cernerUserId = '123';
     var patientId = '';
+    var ehrId = '456';
 
     window.getLink = function () {
         getIndirectRoomUrl(copyLinkToClipboardAndReport);
