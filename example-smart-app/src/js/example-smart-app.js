@@ -1,5 +1,6 @@
 (function (window) {
 
+    $('#container').hide();
     document.getElementById('afhcan-cerner-version').innerHTML = 'Version: VPR SMART FHIR';
 
     // Hide the inline alert whenever the window is clicked on.
@@ -36,9 +37,10 @@
                 $.when(pt, obv).fail(onError);
 
                 $.when(pt, obv).done(function (patient, obv) {
+                    patientId = patient.id;
                     console.log(patient);
 
-                    ret.resolve(p);
+                    ret.resolve();
                 });
             } else {
                 onError();
