@@ -16,6 +16,24 @@
       <div class="bounce2"></div>
       <div class="bounce3"></div>
     </div>
+    
+    <div class="container">
+		<img src="$SOURCE_DIR$/images/VirtualPatientRoom.png" width="200">
+		<br/>
+		<br/>
+		<input id="createLink" class="btn btn btn-outline-primary btn" type="button" value="Get Link to Virtual Patient Room" onclick="getLink()"/>
+		<input id="launchLink" class="btn btn-outline-primary btn" type="button" value="Start Virtual Visit" onclick="getLinkAndLaunch()"/>
+		<br/>
+		<br/>
+		<div id="inlineAlertDiv" class="alert alert-info alert-dismissible collapse" role="alert">
+			<span id="alertDescriptionSpan" style="font-weight: bold;"></span><br/>
+			<span id="alertTextSpan"></span>
+		</div>
+		<div id="afhcan-cerner-version"></div>
+        <br/>
+        <div>The Virtual Patient Room is a pilot feature and is currently designed to be used by the Palliative Care team to communicate with their patients by Vidyo.  If you have questions, please contact AFHCAN Support (afhcansupport@anthc.org).</div>
+	</div>
+    
     <!--<div id='holder' >
       <h2>Example-SMART-App</h2>
 
@@ -65,8 +83,8 @@
           <th>HDL:</th>
           <td id='hdl'></td>
         </tr>
-      </table>-->
-    </div>
+      </table>
+    </div>-->
     <!-- Required JS files to enable this page to embed within an MPage -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.26.0/polyfill.min.js'></script>
     <script src='./lib/js/cerner-smart-embeddable-lib-1.0.0.min.js'></script>
