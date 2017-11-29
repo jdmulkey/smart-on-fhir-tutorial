@@ -40,6 +40,7 @@
                 $.when(pt, obv).done(function (patient, obv) {
                     patientId = patient.id;
                     console.log(patient);
+                    console.log(obv);
                     ret.resolve();
                 });
             } else {
