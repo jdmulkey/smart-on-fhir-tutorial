@@ -26,7 +26,7 @@
             if (smart.hasOwnProperty('patient')) {
                 var patient = smart.patient;
                 var pt = patient.read();
-                });
+
                 $.when(pt).fail(onError);
                 $.when(pt).done(function (patient) {
                     patientId = patient.id;
