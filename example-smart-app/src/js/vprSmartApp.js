@@ -39,7 +39,6 @@
                 $.when(pt, ur).done(function (patient, user) {
                     patientId = patient.id;
                     cernerUserId = user.data.id;
-                    console.log(cernerUserId);
                     console.log(patient);
                     console.log(user);
                     ret.resolve();
