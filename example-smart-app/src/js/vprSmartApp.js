@@ -3,7 +3,7 @@
 
     var cernerUserId = '';
     var patientId = '';
-    var ehrId = '456';
+    var ehrId = '';
     var newWindow = null;
 
     // Hide the inline alert whenever the window is clicked on.
@@ -28,7 +28,10 @@
                 var pt = patient.read();
 
                 var user = smart.user;
-                
+
+                ehrId = smart.state.client.client_id;
+                console.log(ehrId);
+
                 var currentUserFhirUrl = smart.userId;
                 var userIdSections = currentUserFhirUrl.split("/");
                 var userType = userIdSections[userIdSections.length - 2];
