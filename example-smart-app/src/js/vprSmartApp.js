@@ -29,12 +29,12 @@
 
                 var user = smart.user;
                 var ur = user.read();
-                console.log(ur);
 
-                $.when(pt).fail(onError);
-                $.when(pt).done(function (patient) {
+                $.when(pt, ur).fail(onError);
+                $.when(pt, ur).done(function (patient, user) {
                     patientId = patient.id;
                     console.log(patient);
+                    console.log(user);
                     ret.resolve();
                 });
             } else {
