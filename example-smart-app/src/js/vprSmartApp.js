@@ -30,7 +30,6 @@
                 var user = smart.user;
 
                 ehrId = smart.state.client.client_id;
-                console.log(ehrId);
 
                 var currentUserFhirUrl = smart.userId;
                 var userIdSections = currentUserFhirUrl.split("/");
