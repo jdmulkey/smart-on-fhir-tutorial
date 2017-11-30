@@ -31,15 +31,17 @@
                 
                 var currentUserFhirUrl = smart.userId;
                 var userIdSections = currentUserFhirUrl.split("/");
-                //console.log(userIdSections[userIdSections.length - 2]);
-                //console.log(userIdSections[userIdSections.length - 1]);
-                //ur = smart.api.read({ type: userIdSections[userIdSections.length - 2], id: userIdSections[userIdSections.length - 1] });
+                var userType = userIdSections[userIdSections.length - 2];
+                var userId = userIdSections[userIdSections.length - 1];
+                console.log(userType);
+                console.log(userId);
+                ur = smart.api.read({ type: userType, id: userId });
 
-                $.when(pt).fail(onError);
-                $.when(pt).done(function (patient) {
+                $.when(pt, ur).fail(onError);
+                $.when(pt, ur).done(function (patient, user) {
                     patientId = patient.id;
                     console.log(patient);
-                    //console.log(user);
+                    console.log(user);
                     ret.resolve();
                 });
             } else {
