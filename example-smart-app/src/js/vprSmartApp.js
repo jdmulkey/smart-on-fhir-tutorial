@@ -30,6 +30,7 @@
                 var user = smart.user;
                 
                 var currentUserFhirUrl = smart.userId;
+                var userIdSections = currentUserFhirUrl.split("/");
                 ur = smart.api.read({ type: userIdSections[userIdSections.length - 2], id: userIdSections[userIdSections.length - 1] });
 
                 $.when(pt, ur).fail(onError);
