@@ -27,10 +27,14 @@
                 var patient = smart.patient;
                 var pt = patient.read();
 
-                $.when(pt).fail(onError);
-                $.when(pt).done(function (patient) {
+                var user = smart.user;
+                var ur = user.read();
+
+                $.when(pt, ur).fail(onError);
+                $.when(pt, ur).done(function (patient, ur) {
                     patientId = patient.id;
                     console.log(patient);
+                    console.log(ur);
                     ret.resolve();
                 });
             } else {
