@@ -1,7 +1,7 @@
 (function (window) {
     document.getElementById('afhcan-cerner-version').innerHTML = 'Version: VPR SMART FHIR';
 
-    var cernerUserId = '123';
+    var cernerUserId = '';
     var patientId = '';
     var ehrId = '456';
     var newWindow = null;
@@ -33,13 +33,13 @@
                 var userIdSections = currentUserFhirUrl.split("/");
                 var userType = userIdSections[userIdSections.length - 2];
                 var userId = userIdSections[userIdSections.length - 1];
-                console.log(userType);
-                console.log(userId);
                 ur = smart.api.read({ type: userType, id: userId });
 
                 $.when(pt, ur).fail(onError);
                 $.when(pt, ur).done(function (patient, user) {
                     patientId = patient.id;
+                    cernerUserId = user.data.id;
+                    console.log(cernerUserId);
                     console.log(patient);
                     console.log(user);
                     ret.resolve();
