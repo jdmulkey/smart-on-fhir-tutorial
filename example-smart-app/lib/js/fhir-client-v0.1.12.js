@@ -17343,6 +17343,8 @@ BBClient.authorize = function(params, errback){
         console.log("Failed to discover authorization URL given", params);
     };
   }
+	
+
   
   // prevent inheritance of tokenResponse from parent window
   delete sessionStorage.tokenResponse;
@@ -17352,6 +17354,8 @@ BBClient.authorize = function(params, errback){
       client: params
     };
   }
+	
+console.log(params.client);
 
   if (!params.response_type){
     params.response_type = 'code';
