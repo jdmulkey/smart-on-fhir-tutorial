@@ -17338,7 +17338,7 @@ function bypassOAuth(fhirServiceUrl, callback){
 }
 
 BBClient.authorize = function(params, errback){
-
+alert(params);
   if (!errback){
     errback = function(){
         console.log("Failed to discover authorization URL given", params);
