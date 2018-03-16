@@ -17172,6 +17172,7 @@ BBClient.ready = function(input, callback, errback){
   var accessTokenResolver = null;
 
   if (isFakeOAuthToken()) {
+	  alert('is fake');
     accessTokenResolver = completePageReload();
     // In order to remove the state query parameter in the URL, both replaceBrowserHistory
     // and fullSessionStorageSupport setting flags must be set to true. This allows querying the state
@@ -17184,7 +17185,9 @@ BBClient.ready = function(input, callback, errback){
       window.history.replaceState({}, "", window.location.toString().replace(window.location.search, ""));
     }
   } else {
+	  alert('not fake');
     if (validTokenResponse()) { // we're reloading after successful completion
+	    alert('valid response');
       // Check if 2 minutes from access token expiration timestamp
       var tokenResponse = getPreviousToken();
       var payloadCheck = jwt.decode(tokenResponse.access_token);
@@ -17198,13 +17201,15 @@ BBClient.ready = function(input, callback, errback){
         accessTokenResolver = completePageReload();
       }
     } else if (isCode) { // code flow
+	    alert('code flow');
       accessTokenResolver = completeCodeFlow(args.input);
     } else { // token flow
+	    alert('token flow');
       accessTokenResolver = completeTokenFlow(args.input);
     }
   }
   accessTokenResolver.done(function(tokenResponse){
-
+alert('accessTokenResolver done');
     if (!tokenResponse || !tokenResponse.state) {
       return args.errback("No 'state' parameter found in authorization response.");
     }
@@ -17249,6 +17254,7 @@ BBClient.ready = function(input, callback, errback){
     args.callback(ret);
 
   }).fail(function(ret){
+	  alert('accessTokenResolver fail');
     ret ? args.errback(ret) : args.errback("Failed to obtain access token.");
   });
 
