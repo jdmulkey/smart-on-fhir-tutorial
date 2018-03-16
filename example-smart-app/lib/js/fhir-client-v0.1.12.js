@@ -17172,7 +17172,6 @@ BBClient.ready = function(input, callback, errback){
   var accessTokenResolver = null;
 
   if (isFakeOAuthToken()) {
-	  alert('is fake');
     accessTokenResolver = completePageReload();
     // In order to remove the state query parameter in the URL, both replaceBrowserHistory
     // and fullSessionStorageSupport setting flags must be set to true. This allows querying the state
@@ -17185,7 +17184,6 @@ BBClient.ready = function(input, callback, errback){
       window.history.replaceState({}, "", window.location.toString().replace(window.location.search, ""));
     }
   } else {
-	  alert('not fake');
     if (validTokenResponse()) { // we're reloading after successful completion
 	    alert('valid response');
       // Check if 2 minutes from access token expiration timestamp
@@ -17211,13 +17209,16 @@ BBClient.ready = function(input, callback, errback){
   accessTokenResolver.done(function(tokenResponse){
 alert('accessTokenResolver done');
     if (!tokenResponse || !tokenResponse.state) {
+	    alert('no state found in authr response');
       return args.errback("No 'state' parameter found in authorization response.");
     }
 
     // Save the tokenReponse object into sessionStorage
     if (BBClient.settings.fullSessionStorageSupport) {
+	    alert('full session support');
       sessionStorage.tokenResponse = JSON.stringify(tokenResponse);
     } else {
+	    alert('no full session support');
       //Save the tokenResponse object and the state into sessionStorage keyed by state
       var combinedObject = $.extend(true, JSON.parse(sessionStorage[tokenResponse.state]), { 'tokenResponse' : tokenResponse });
       sessionStorage[tokenResponse.state] = JSON.stringify(combinedObject);
@@ -17225,6 +17226,7 @@ alert('accessTokenResolver done');
 
     var state = JSON.parse(sessionStorage[tokenResponse.state]);
     if (state.fake_token_response) {
+	    alert('faker');
       tokenResponse = state.fake_token_response;
     }
 
@@ -17234,17 +17236,20 @@ alert('accessTokenResolver done');
     };
     
     if (tokenResponse.id_token) {
+	    alert('user id profile');
         var id_token = tokenResponse.id_token;
         var payload = jwt.decode(id_token);
         fhirClientParams["userId"] = payload["profile"]; 
     }
 
     if (tokenResponse.access_token !== undefined) {
+	    alert('setting bearer token - this is good!');
       fhirClientParams.auth = {
         type: 'bearer',
         token: tokenResponse.access_token
       };
     } else if (!state.fake_token_response){
+	    alert('no access token...');
       return args.errback("Failed to obtain access token.");
     }
 
