@@ -17,12 +17,14 @@
         var ret = $.Deferred();
 
         function onError() {
-            console.log('Failed to load FHIR resoruce');
+            //console.log('Failed to load FHIR resoruce');
+            alert('Failed to load FHIR resoruce');
             ret.reject();
         }
 
         function onReady(smart) {
-            console.log(smart);
+            //console.log(smart);
+            alert('smart = ' + smart);
             if (smart.hasOwnProperty('patient')) {
                 var patient = smart.patient;
                 var pt = patient.read();
@@ -46,6 +48,7 @@
                     ret.resolve();
                 });
             } else {
+                alert('no smart patient...');
                 onError();
             }
         }
