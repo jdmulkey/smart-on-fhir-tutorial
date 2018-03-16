@@ -17354,8 +17354,6 @@ BBClient.authorize = function(params, errback){
       client: params
     };
   }
-	
-alert(params.client);
 
   if (!params.response_type){
     params.response_type = 'code';
