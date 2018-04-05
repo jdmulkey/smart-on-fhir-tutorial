@@ -22,6 +22,8 @@
 
         function onReady(smart) {
             if (smart.hasOwnProperty('patient')) {
+                
+                if (smart.
                 var patient = smart.patient;
                 var pt = patient.read();
                 
@@ -35,10 +37,18 @@
                 var userType = userIdSections[userIdSections.length - 2];
                 var userId = userIdSections[userIdSections.length - 1];
                 ur = smart.api.read({ type: userType, id: userId });
+                
+                var app = smart.patient.api.fetchAll({
+                    type: 'Appointment',
+                    query: {
+                      code: {
+                      }
+                    }
+                  });
 
-                $.when(pt, ur).fail(onError);
-                $.when(pt, ur).done(function (patient, user) {
-                    alert(user);
+                $.when(pt, ur, app).fail(onError);
+                $.when(pt, ur, app).done(function (patient, user) {
+                    alert(app)
                     //
                       var gender = patient.gender;
                       var dob = new Date(patient.birthDate);
