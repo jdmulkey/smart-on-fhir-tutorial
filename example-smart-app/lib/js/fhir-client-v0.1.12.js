@@ -17185,7 +17185,7 @@ BBClient.ready = function(input, callback, errback){
     }
   } else {
     if (validTokenResponse()) { // we're reloading after successful completion
-	    alert('valid response');
+	    //alert('valid response');
       // Check if 2 minutes from access token expiration timestamp
       var tokenResponse = getPreviousToken();
       var payloadCheck = jwt.decode(tokenResponse.access_token);
@@ -17199,26 +17199,26 @@ BBClient.ready = function(input, callback, errback){
         accessTokenResolver = completePageReload();
       }
     } else if (isCode) { // code flow
-	    alert('code flow');
+	    //alert('code flow');
       accessTokenResolver = completeCodeFlow(args.input);
     } else { // token flow
-	    alert('token flow');
+	    //alert('token flow');
       accessTokenResolver = completeTokenFlow(args.input);
     }
   }
   accessTokenResolver.done(function(tokenResponse){
-alert('accessTokenResolver done');
+//alert('accessTokenResolver done');
     if (!tokenResponse || !tokenResponse.state) {
-	    alert('no state found in authr response');
+	    //alert('no state found in authr response');
       return args.errback("No 'state' parameter found in authorization response.");
     }
 
     // Save the tokenReponse object into sessionStorage
     if (BBClient.settings.fullSessionStorageSupport) {
-	    alert('full session support');
+	    //alert('full session support');
       sessionStorage.tokenResponse = JSON.stringify(tokenResponse);
     } else {
-	    alert('no full session support');
+	    //alert('no full session support');
       //Save the tokenResponse object and the state into sessionStorage keyed by state
       var combinedObject = $.extend(true, JSON.parse(sessionStorage[tokenResponse.state]), { 'tokenResponse' : tokenResponse });
       sessionStorage[tokenResponse.state] = JSON.stringify(combinedObject);
@@ -17226,7 +17226,7 @@ alert('accessTokenResolver done');
 
     var state = JSON.parse(sessionStorage[tokenResponse.state]);
     if (state.fake_token_response) {
-	    alert('faker');
+	    //alert('faker');
       tokenResponse = state.fake_token_response;
     }
 
@@ -17236,20 +17236,20 @@ alert('accessTokenResolver done');
     };
     
     if (tokenResponse.id_token) {
-	    alert('user id profile');
+	    //alert('user id profile');
         var id_token = tokenResponse.id_token;
         var payload = jwt.decode(id_token);
         fhirClientParams["userId"] = payload["profile"]; 
     }
 
     if (tokenResponse.access_token !== undefined) {
-	    alert('setting bearer token - this is good!');
+	    //alert('setting bearer token - this is good!');
       fhirClientParams.auth = {
         type: 'bearer',
         token: tokenResponse.access_token
       };
     } else if (!state.fake_token_response){
-	    alert('no access token...');
+	    //alert('no access token...');
       return args.errback("Failed to obtain access token.");
     }
 
@@ -17259,7 +17259,7 @@ alert('accessTokenResolver done');
     args.callback(ret);
 
   }).fail(function(ret){
-	  alert('accessTokenResolver fail');
+	  //alert('accessTokenResolver fail');
     ret ? args.errback(ret) : args.errback("Failed to obtain access token.");
   });
 
