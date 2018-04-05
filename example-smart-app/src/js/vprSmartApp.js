@@ -39,11 +39,7 @@
                 ur = smart.api.read({ type: userType, id: userId });
                 
                 var app = smart.patient.api.fetchAll({
-                    type: 'Appointment',
-                    query: {
-                      code: {
-                      }
-                    }
+                    type: 'Appointment'
                   });
 
                 $.when(pt, ur, app).fail(onError);
