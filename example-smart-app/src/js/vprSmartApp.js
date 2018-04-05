@@ -38,7 +38,7 @@
 
                 $.when(pt, ur).fail(onError);
                 $.when(pt, ur).done(function (patient, user) {
-                    
+                    alert(user);
                     //
                       var gender = patient.gender;
                       var dob = new Date(patient.birthDate);
@@ -63,7 +63,7 @@
                     cernerUserId = user.data.id;
                     console.log(patient);
                     console.log(user);
-                    alert(user);
+                    
                     ret.resolve();
                 });
             } else {
