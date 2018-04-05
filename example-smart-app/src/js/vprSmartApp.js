@@ -24,7 +24,6 @@
             if (smart.hasOwnProperty('patient')) {
                 var patient = smart.patient;
                 var pt = patient.read();
-
                 var user = smart.user;
 
                 ehrId = smart.state.client.client_id;
@@ -37,6 +36,27 @@
 
                 $.when(pt, ur).fail(onError);
                 $.when(pt, ur).done(function (patient, user) {
+                    
+                    //
+                      var gender = patient.gender;
+                      var dob = new Date(patient.birthDate);
+                      var day = dob.getDate();
+                      var monthIndex = dob.getMonth() + 1;
+                      var year = dob.getFullYear();
+
+                      var dobStr = monthIndex + '/' + day + '/' + year;
+                      var fname = '';
+                      var lname = '';
+
+                      if (typeof patient.name[0] !== 'undefined') {
+                        fname = patient.name[0].given.join(' ');
+                        lname = patient.name[0].family.join(' ');
+                      }
+                    
+                    alert(fname + ' ' + lname);
+                    //
+                    
+                    
                     patientId = patient.id;
                     cernerUserId = user.data.id;
                     console.log(patient);
