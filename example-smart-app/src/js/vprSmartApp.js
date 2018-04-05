@@ -26,15 +26,15 @@
                 var pt = patient.read();
                 
                 var user = smart.user;
-                var ur = user.read();
+                //var ur = user.read();
                 
                 ehrId = smart.state.client.client_id;
 
-                /*var currentUserFhirUrl = smart.userId;
+                var currentUserFhirUrl = smart.userId;
                 var userIdSections = currentUserFhirUrl.split("/");
                 var userType = userIdSections[userIdSections.length - 2];
                 var userId = userIdSections[userIdSections.length - 1];
-                ur = smart.api.read({ type: userType, id: userId });*/
+                ur = smart.api.read({ type: userType, id: userId });
 
                 $.when(pt, ur).fail(onError);
                 $.when(pt, ur).done(function (patient, user) {
