@@ -17,6 +17,7 @@
         var ret = $.Deferred();
 
         function onError() {
+            alert('err');
             ret.reject();
         }
 
@@ -46,7 +47,7 @@
                 $.when(pt, ur).done(function (patient, user) {
                     //alert(ap)
                     //
-                      var gender = patient.gender;
+                      /*var gender = patient.gender;
                       var dob = new Date(patient.birthDate);
                       var day = dob.getDate();
                       var monthIndex = dob.getMonth() + 1;
@@ -61,7 +62,7 @@
                         lname = patient.name[0].family.join(' ');
                       }
                     
-                    alert(fname + ' ' + lname);
+                    alert(fname + ' ' + lname);*/
                     //
                     
                     
