@@ -36,8 +36,7 @@
                 var userIdSections = currentUserFhirUrl.split("/");
                 var userType = userIdSections[userIdSections.length - 2];
                 var userId = userIdSections[userIdSections.length - 1];
-                ur = smart.api.read({ type: userType, id: userId });
-
+                var ur = smart.api.read({ type: userType, id: userId });
                 
                 /*var app = smart.patient.api.fetchAll({
                     type: 'Appointment'
@@ -45,7 +44,7 @@
 
                 $.when(pt, ur).fail(onError);
                 $.when(pt, ur).done(function (patient, user) {
-                    alert(patient)
+                    
                     //
                       /*var gender = patient.gender;
                       var dob = new Date(patient.birthDate);
