@@ -43,6 +43,7 @@
                 var userId = userIdSections[userIdSections.length - 1];
                 var ur = smart.api.read({ type: userType, id: userId });
                 
+                 alert(smart.patient.id);
                 var app = smart.api.fetchAll({
                     type: 'Appointment',
                     query: {
@@ -51,8 +52,6 @@
                     }
                   });
                 
-                alert(smart.patient.id);
-
                 $.when(pt, ur, app).fail(onError);
                 $.when(pt, ur, app).done(function (patient, user, aps) {
                     console.log(aps);
