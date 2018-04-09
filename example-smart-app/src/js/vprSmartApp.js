@@ -1,4 +1,5 @@
 (function (window) {
+try {
     document.getElementById('afhcan-cerner-version').innerHTML = 'Version: VPR SMART FHIR';
 
     var cernerUserId = '';
@@ -56,16 +57,19 @@
                     console.log(aps);
                     //
                     
+                    // Display the appointments, if any.
                     _appointments = '';
                     if (aps.data.entry != null) {
                         aps.data.entry.forEach(function(ap) {
                             _appointments += ap.resource.text.div;
                             console.log(ap.resource.text.div);
                         });
-                        if (!_appointments) {
-                            _appointments = 'No appointments found for patient';
-                        }
-                    } else {
+                        
+                    }
+                    if (!_appointments) {
+                        _appointments = 'No appointments found for patient';
+                    }
+                    if (aps.status != 'success') {
                         alert('Appointment status: ' + aps.status);
                     }
 
@@ -176,4 +180,7 @@
         //$('#vprDiv').show();
         $('#loading').hide();
     };
+} catch (e) {
+    alert('Exception: ' + e);
+}
 })(window);
