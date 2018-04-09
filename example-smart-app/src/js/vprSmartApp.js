@@ -41,12 +41,12 @@
                 var userId = userIdSections[userIdSections.length - 1];
                 var ur = smart.api.read({ type: userType, id: userId });
                 
-                var app = smart.patient.api.fetchAll({
+                /*var app = smart.patient.api.fetchAll({
                     type: 'Appointment',
                     query: {
                       date: '2018'
                     }
-                  });
+                  });*/
 
                 $.when(pt, ur).fail(onError);
                 $.when(pt, ur).done(function (patient, user) {
