@@ -58,7 +58,7 @@
                     
                     _appointments = '';
                     aps.data.entry.forEach(function(ap) {
-                        _appointments += ap.text.div;
+                        _appointments += ap.resource.text.div;
                         console.log(ap.resource.text.div);
                     });
                     if (!_appointments) {
