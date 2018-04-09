@@ -17,7 +17,7 @@
         var ret = $.Deferred();
 
         function onError() {
-            alert('err');
+            alert('errrrr');
             ret.reject();
         }
 
