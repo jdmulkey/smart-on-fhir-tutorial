@@ -34,15 +34,15 @@ try {
                 // http://docs.smarthealthit.org/clients/javascript/
                 // https://groups.google.com/forum/#!searchin/cerner-fhir-developers/smart.user.read()%7Csort:date/cerner-fhir-developers/0LIK-2Af-5s/-D_4tmiiBgAJ
                 //var user = smart.user;
-                //var ur = smart.user.read();
+                var ur = smart.user.read();
                 
                 ehrId = smart.state.client.client_id;
 
-                var currentUserFhirUrl = smart.userId;
+               /* var currentUserFhirUrl = smart.userId;
                 var userIdSections = currentUserFhirUrl.split("/");
                 var userType = userIdSections[userIdSections.length - 2];
                 var userId = userIdSections[userIdSections.length - 1];
-                var ur = smart.api.read({ type: userType, id: userId });
+                var ur = smart.api.read({ type: userType, id: userId });*/
                 
                 var app = smart.patient.api.search({
                     type: 'Appointment',
