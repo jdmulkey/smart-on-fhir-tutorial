@@ -57,9 +57,9 @@
                     //
                     
                     _appointments = '';
-                    aps.data.entry.forEach(function(ap) {
+                    aps.data.data.entry.forEach(function(ap) {
                         _appointments += ap.text.div;
-                        console.log(ap.text.div);
+                        console.log(ap.resource.text.div);
                     });
                     if (!_appointments) {
                         _appointments = 'No appointments found for patient';
