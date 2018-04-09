@@ -50,6 +50,8 @@
                       date: '2018'
                     }
                   });
+                
+                alert(smart.patient.id);
 
                 $.when(pt, ur, app).fail(onError);
                 $.when(pt, ur, app).done(function (patient, user, aps) {
