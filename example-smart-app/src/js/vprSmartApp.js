@@ -5,6 +5,7 @@
     var patientId = '';
     var ehrId = '';
     var newWindow = null;
+    var _appointments = null;
 
     // Hide the inline alert whenever the window is clicked on.
     window.onclick = function (event) {
@@ -53,10 +54,15 @@
                 $.when(pt, ur, app).done(function (patient, user, aps) {
                     console.log(aps);
                     //
-                      
-                    aps.forEach(function(ap){
-                      console.log(ap.text.div);
+                    
+                    _appointments = null;
+                    aps.forEach(function(ap) {
+                        _appointments += ap.text.div;
+                        console.log(ap.text.div);
                     });
+                    if (!_appointments) {
+                        _appointments = 'No appointments found for patient';
+                    }
 
                     /*var gender = patient.gender;
                       var dob = new Date(patient.birthDate);
@@ -160,7 +166,9 @@
     };
 
     window.drawVisualization = function () {
-        $('#vprDiv').show();
+        $('#patientAppointmentsId').html(_appointments); 
+        $('#patientAppointmentsId').show();
+        //$('#vprDiv').show();
         $('#loading').hide();
     };
 })(window);
