@@ -43,8 +43,7 @@
                 var userId = userIdSections[userIdSections.length - 1];
                 var ur = smart.api.read({ type: userType, id: userId });
                 
-                 alert(smart.patient.id);
-                var app = smart.api.fetchAll({
+                var app = smart.api.search({
                     type: 'Appointment',
                     query: {
                       patient: smart.patient.id,
