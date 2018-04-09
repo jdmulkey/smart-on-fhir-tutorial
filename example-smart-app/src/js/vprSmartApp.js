@@ -48,7 +48,7 @@
                       }
                     }
                   });
-                alert(app)
+                console.log(app)
 
                 $.when(pt, ur, app).fail(onError);
                 $.when(pt, ur, app).done(function (patient, user, ap) {
