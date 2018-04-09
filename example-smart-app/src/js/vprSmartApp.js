@@ -50,10 +50,15 @@
                   });
 
                 $.when(pt, ur, app).fail(onError);
-                $.when(pt, ur, app).done(function (patient, user, ap) {
-                    console.log(ap);
+                $.when(pt, ur, app).done(function (patient, user, aps) {
+                    console.log(aps);
                     //
-                      /*var gender = patient.gender;
+                      
+                    aps.forEach(function(ap){
+                      console.log(ap.text.div);
+                    });
+
+                    /*var gender = patient.gender;
                       var dob = new Date(patient.birthDate);
                       var day = dob.getDate();
                       var monthIndex = dob.getMonth() + 1;
