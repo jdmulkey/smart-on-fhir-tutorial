@@ -57,12 +57,16 @@
                     //
                     
                     _appointments = '';
-                    aps.data.entry.forEach(function(ap) {
-                        _appointments += ap.resource.text.div;
-                        console.log(ap.resource.text.div);
-                    });
-                    if (!_appointments) {
-                        _appointments = 'No appointments found for patient';
+                    if (aps.data.entry != null) {
+                        aps.data.entry.forEach(function(ap) {
+                            _appointments += ap.resource.text.div;
+                            console.log(ap.resource.text.div);
+                        });
+                        if (!_appointments) {
+                            _appointments = 'No appointments found for patient';
+                        }
+                    } else {
+                        alert('Appointment status: ' + aps.status);
                     }
 
                     /*var gender = patient.gender;
