@@ -42,7 +42,11 @@
                 var ur = smart.api.read({ type: userType, id: userId });
                 
                 var app = smart.patient.api.search({
-                    type: 'Appointment'
+                    type: 'Appointment',
+                    query: {
+                      code: {
+                      }
+                    }
                   });
                 alert(app)
 
