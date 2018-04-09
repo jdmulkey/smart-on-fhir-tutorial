@@ -44,7 +44,7 @@
                 var app = smart.patient.api.fetchAll({
                     type: 'Appointment',
                     query: {
-                      _id: '4342012',
+                      patient: '4342012',
                       date: '2018'
                     }
                   });
