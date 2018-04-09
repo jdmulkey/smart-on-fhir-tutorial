@@ -41,7 +41,7 @@
                 var userId = userIdSections[userIdSections.length - 1];
                 var ur = smart.api.read({ type: userType, id: userId });
                 
-                var app = smart.patient.api.fetchAll({
+                var app = smart.api.fetchAll({
                     type: 'Appointment',
                     query: {
                       patient: '4342012',
@@ -52,6 +52,7 @@
                 $.when(pt, ur, app).fail(onError);
                 $.when(pt, ur, app).done(function (patient, user, ap) {
                     alert(ap)
+                    alert('success!!! I think...')
                     //
                       /*var gender = patient.gender;
                       var dob = new Date(patient.birthDate);
