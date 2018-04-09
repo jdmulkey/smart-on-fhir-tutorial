@@ -29,6 +29,7 @@
                 
                 //var user = smart.user;
                 var ur = smart.user.read();
+                alert(ur);
                 
                 ehrId = smart.state.client.client_id;
 
