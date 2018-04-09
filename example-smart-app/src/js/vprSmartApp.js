@@ -57,7 +57,7 @@
                     //
                     
                     _appointments = '';
-                    aps.forEach(function(ap) {
+                    aps.data.entry.forEach(function(ap) {
                         _appointments += ap.text.div;
                         console.log(ap.text.div);
                     });
