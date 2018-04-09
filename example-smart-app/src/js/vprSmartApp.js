@@ -51,8 +51,7 @@
 
                 $.when(pt, ur, app).fail(onError);
                 $.when(pt, ur, app).done(function (patient, user, ap) {
-                    alert(ap)
-                    alert('success!!! I think...')
+                    console.log(ap);
                     //
                       /*var gender = patient.gender;
                       var dob = new Date(patient.birthDate);
