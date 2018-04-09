@@ -5,7 +5,7 @@
     var patientId = '';
     var ehrId = '';
     var newWindow = null;
-    var _appointments = null;
+    var _appointments = '';
 
     // Hide the inline alert whenever the window is clicked on.
     window.onclick = function (event) {
