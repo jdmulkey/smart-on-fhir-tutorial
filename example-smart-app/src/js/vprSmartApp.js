@@ -23,6 +23,7 @@
         }
 
         function onReady(smart) {
+            console.log(smart)
             if (smart.hasOwnProperty('patient')) {
                 
                 var pt = smart.patient.read();
@@ -55,7 +56,7 @@
                     console.log(aps);
                     //
                     
-                    _appointments = null;
+                    _appointments = '';
                     aps.forEach(function(ap) {
                         _appointments += ap.text.div;
                         console.log(ap.text.div);
