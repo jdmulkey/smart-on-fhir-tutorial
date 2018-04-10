@@ -51,13 +51,13 @@ try {
                       date: '2018'
                     }
                   });*/
-                alert(smart.patient.id);
+                //alert(smart.patient.id);
                 var app = smart.api.search({
                     type: 'Appointment',
                     query: {
-                      //patient: smart.patient.id,
+                      patient: smart.patient.id,
                       date: '2018',
-                      practitioner: '3653452' //Pamela Gjertson
+                      //practitioner: '3653452' //Pamela Gjertson
                       //location: ''
                       //date: {
                       //    $or: ['2016', '2017', '2018']
