@@ -55,7 +55,7 @@ try {
                 var app = smart.api.search({
                     type: 'Appointment',
                     query: {
-                      patient: smart.patient.id,
+                      //patient: smart.patient.id,
                       date: '2018',
                       practitioner: '3653452' //Pamela Gjertson
                       //location: ''
