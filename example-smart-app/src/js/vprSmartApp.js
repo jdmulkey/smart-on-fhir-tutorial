@@ -19,7 +19,6 @@ try {
         var ret = $.Deferred();
 
         function onError() {
-            alert('onError');
             ret.reject();
         }
 
@@ -56,7 +55,7 @@ try {
                     type: 'Appointment',
                     query: {
                       patient: smart.patient.id,
-                      date: '2018',
+                      date: '2018'
                       //practitioner: '3653452' //Pamela Gjertson
                       //location: ''
                       //date: {
