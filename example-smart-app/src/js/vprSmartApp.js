@@ -56,9 +56,10 @@ try {
                     type: 'Appointment',
                     query: {
                       patient: smart.patient.id,
-                      date: {
-                          $or: ['2016', '2017', '2018']
-                      }
+                      date: '2018'
+                      //date: {
+                      //    $or: ['2016', '2017', '2018']
+                      //}
                     }
                   });
                 
