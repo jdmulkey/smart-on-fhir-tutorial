@@ -44,7 +44,7 @@ try {
                 var ur = smart.api.read({ type: userType, id: userId });
                 
                 var cre = smart.patient.api.create({
-                    resource: 'Appointment',
+                    resource:
                     {
                         "resourceType":"Appointment",
                         "slot":{
@@ -61,7 +61,7 @@ try {
                            }],
                         "start":"2018-04-20T10:46:09+00:00",
                         "end":"2018-04-20T10:46:09+00:00"
-                        }
+                    }
                   });
                 
                 /*var app = smart.patient.api.search({
