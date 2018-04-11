@@ -86,7 +86,7 @@ try {
                 var slot = smart.api.search({
                     type: 'Slot',
                     query: {
-                      'schedule.actor': 'Practitioner/605926',
+                      'schedule.actor': 'Practitioner/605926', //605926 Carter, Kristen (Sandbox)
                       'slot-type': 'http://snomed.info/sct|394581000',
                       'start': '2018'
                        //'location': '4048128'
@@ -113,6 +113,13 @@ try {
                     }
                     if (aps.status != 'success') {
                         alert('Appointment status: ' + aps.status);
+                    }
+                    
+                    if (slt.entry != null) {
+                        slt.entry.forEach(function(sl) {
+                            console.log(sl.fullUrl);
+                        });
+                        
                     }
 
                     /*var gender = patient.gender;
