@@ -43,7 +43,7 @@ try {
                 var userId = userIdSections[userIdSections.length - 1];
                 var ur = smart.api.read({ type: userType, id: userId });
                 
-                var cre = smart.patient.api.create({
+                /*var cre = smart.patient.api.create({
                     resource:
                     {
                         "resourceType":"Appointment",
@@ -58,7 +58,7 @@ try {
                            }],
                         "status":"proposed"
                     }
-                  });
+                  });*/
 
                 //, "start":"2018-04-20T10:46:09+00:00",
                 //"end":"2018-04-20T10:46:09+00:00"
@@ -93,8 +93,8 @@ try {
                     }
                   });
                 
-                $.when(pt, ur, app, slot, cre).fail(onError);
-                $.when(pt, ur, app, slot, cre).done(function (patient, user, aps, slt, cr) {
+                $.when(pt, ur, app, slot).fail(onError);
+                $.when(pt, ur, app, slot).done(function (patient, user, aps, slt) {
                     console.log(slt);
                     console.log(ur);
                     console.log(cr);
