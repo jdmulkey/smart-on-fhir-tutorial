@@ -88,7 +88,7 @@ try {
                 var slot = smart.api.search({
                     type: 'Slot',
                     query: {
-                      'schedule.actor': 'Practitioner/4464007',
+                      'schedule.actor': 'Practitioner/605926',
                       'slot-type': 'http://snomed.info/sct|394581000',
                       'start': '2018'
                     }
