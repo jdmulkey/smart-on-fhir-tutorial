@@ -43,7 +43,7 @@ try {
                 var userId = userIdSections[userIdSections.length - 1];
                 var ur = smart.api.read({ type: userType, id: userId });
                 
-                var cre = smart.patient.api.create({
+                /*var cre = smart.patient.api.create({
                     resource:
                     {
                         "resourceType":"Appointment",
@@ -60,7 +60,7 @@ try {
                         "status":"proposed",
                         "priority":"1"
                     }
-                  });
+                  });*/
 
                 //, "start":"2018-04-20T10:46:09+00:00",
                 //"end":"2018-04-20T10:46:09+00:00"
@@ -70,8 +70,8 @@ try {
                       patient: smart.patient.id,
                       date: '2018'
                     }
-                  });*/
-                alert(smart.patient.id);
+                  });
+                alert(smart.patient.id);*/
                 var app = smart.api.search({
                     type: 'Appointment',
                     query: {
@@ -85,10 +85,10 @@ try {
                     }
                   });
                 
-                $.when(pt, ur, app, cre).fail(onError);
-                $.when(pt, ur, app, cre).done(function (patient, user, aps, cr) {
-                    console.log(cr);
-                    console.log(aps);
+                $.when(pt, ur, app).fail(onError);
+                $.when(pt, ur, app).done(function (patient, user, aps) {
+                    //console.log(cr);
+                    console.log(ur);
                     //
                     
                     // Display the appointments, if any.
