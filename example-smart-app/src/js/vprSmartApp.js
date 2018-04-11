@@ -97,8 +97,7 @@ try {
                 $.when(pt, ur, app, slot).done(function (patient, user, aps, slt) {
                     console.log(slt);
                     console.log(ur);
-                    console.log(cr);
-                    //
+                    //console.log(cr);
                     
                     // Display the appointments, if any.
                     _appointments = '';
