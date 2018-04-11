@@ -50,8 +50,6 @@ try {
                         "slot":{
                           "status":"free"
                         },
-                        "status":"proposed",
-                        "priority":"1",
                         "participant":[
                            {"actor":{
                                    "reference":"Patient/" + smart.patient.id,
@@ -59,11 +57,12 @@ try {
                                  },
                               "status":"needs-action"
                            }],
-                        "start":"2018-04-20T10:46:09+00:00",
-                        "end":"2018-04-20T10:46:09+00:00"
+                        "status":"proposed",
                     }
                   });
-                
+                // "priority":"1",
+                //, "start":"2018-04-20T10:46:09+00:00",
+                //"end":"2018-04-20T10:46:09+00:00"
                 /*var app = smart.patient.api.search({
                     type: 'Appointment',
                     query: {
@@ -87,6 +86,7 @@ try {
                 
                 $.when(pt, ur, app, cre).fail(onError);
                 $.when(pt, ur, app, cre).done(function (patient, user, aps, cr) {
+                    console.log(cr);
                     console.log(aps);
                     //
                     
