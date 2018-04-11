@@ -43,7 +43,7 @@ try {
                 var userId = userIdSections[userIdSections.length - 1];
                 var ur = smart.api.read({ type: userType, id: userId });
                 
-            /*    var cre = smart.patient.api.create({
+                var cre = smart.patient.api.create({
                     resource: 'Appointment',
                     {
                         "resourceType":"Appointment",
@@ -62,7 +62,7 @@ try {
                         "start":"2018-04-20T10:46:09+00:00",
                         "end":"2018-04-20T10:46:09+00:00"
                         }
-                  });*/
+                  });
                 
                 /*var app = smart.patient.api.search({
                     type: 'Appointment',
@@ -85,8 +85,8 @@ try {
                     }
                   });
                 
-                $.when(pt, ur, app).fail(onError);
-                $.when(pt, ur, app).done(function (patient, user, aps) {
+                $.when(pt, ur, app, cre).fail(onError);
+                $.when(pt, ur, app, cre).done(function (patient, user, aps, cr) {
                     console.log(aps);
                     //
                     
