@@ -43,7 +43,7 @@ try {
                 var userId = userIdSections[userIdSections.length - 1];
                 var ur = smart.api.read({ type: userType, id: userId });
                 
-                var cre = smart.api.create({
+                var cre = smart.patient.api.create({
                     resource:
                     {
                         "resourceType":"Appointment",
@@ -52,7 +52,7 @@ try {
                         },
                         "participant":[
                            {"actor":{
-                                   "reference":"Patient/4342012",// + smart.patient.id,
+                                   "reference":"Patient/" + smart.patient.id,
                                    "display":"ZZTEST, MALE"
                                  },
                               "status":"needs-action"
@@ -71,7 +71,7 @@ try {
                       date: '2018'
                     }
                   });*/
-                //alert(smart.patient.id);
+                alert(smart.patient.id);
                 var app = smart.api.search({
                     type: 'Appointment',
                     query: {
