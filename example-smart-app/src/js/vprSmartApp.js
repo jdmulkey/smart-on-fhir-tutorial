@@ -95,10 +95,11 @@ try {
                     }
                   });
                 
-                $.when(pt, ur, app, slot).fail(onError);
-                $.when(pt, ur, app, slot).done(function (patient, user, aps, slt) {
+                $.when(pt, ur, app, slot, cre).fail(onError);
+                $.when(pt, ur, app, slot, cre).done(function (patient, user, aps, slt, cr) {
                     console.log(slt);
                     console.log(ur);
+                    console.log(cr);
                     //
                     
                     // Display the appointments, if any.
