@@ -43,7 +43,7 @@ try {
                 var userId = userIdSections[userIdSections.length - 1];
                 var ur = smart.api.read({ type: userType, id: userId });
                 
-                var cre = smart.patient.api.create({
+                var cre = smart.api.create({
                     resource:
                     {
                         "resourceType":"Appointment",
