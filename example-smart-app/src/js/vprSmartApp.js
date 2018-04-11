@@ -43,6 +43,25 @@ try {
                 var userId = userIdSections[userIdSections.length - 1];
                 var ur = smart.api.read({ type: userType, id: userId });
                 
+                var cre = smart.patient.api.create({
+                    type: 'Appointment',
+                    slot: {
+                        status: "free"
+                    },
+                    status: "proposed",
+                    priority: "1",
+                    participant: [
+                       {actor:{
+                               reference: 'Patient/' + smart.patient.id,
+                               display:'PATIENT, TEST'
+                             },
+                          status: 'needs-action'
+                       }],
+                    'start': "2018-04-20T10:46:09+00:00",
+                    'end': "2018-04-20T10:46:09+00:00"
+                    }
+                  });
+                
                 /*var app = smart.patient.api.search({
                     type: 'Appointment',
                     query: {
@@ -50,7 +69,7 @@ try {
                       date: '2018'
                     }
                   });*/
-                alert(smart.patient.id);
+                //alert(smart.patient.id);
                 var app = smart.api.search({
                     type: 'Appointment',
                     query: {
@@ -64,8 +83,8 @@ try {
                     }
                   });
                 
-                $.when(pt, ur, app).fail(onError);
-                $.when(pt, ur, app).done(function (patient, user, aps) {
+                $.when(pt, ur, app, cre).fail(onError);
+                $.when(pt, ur, app, cre).done(function (patient, user, aps, c) {
                     console.log(aps);
                     //
                     
