@@ -71,7 +71,7 @@ try {
                       date: '2018'
                     }
                   });*/
-                //alert(smart.patient.id);
+                alert(smart.patient.id);
                 var app = smart.api.search({
                     type: 'Appointment',
                     query: {
