@@ -85,9 +85,20 @@ try {
                     }
                   });
                 
-                $.when(pt, ur, app).fail(onError);
-                $.when(pt, ur, app).done(function (patient, user, aps) {
-                    //console.log(cr);
+                var slot = smart.api.search({
+                    type: 'Slot',
+                    query: {
+                      schedule:[
+                           {actor:'Practitioner/4464007'}
+                      ],
+                      slot-type: 'http://snomed.info/sct|394581000',
+                      start: '2018'
+                    }
+                  });
+                
+                $.when(pt, ur, app, slot).fail(onError);
+                $.when(pt, ur, app, slot).done(function (patient, user, aps, slt) {
+                    console.log(slt);
                     console.log(ur);
                     //
                     
