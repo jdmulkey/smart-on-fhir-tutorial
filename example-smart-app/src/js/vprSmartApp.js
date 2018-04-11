@@ -48,7 +48,7 @@ try {
                     {
                         "resourceType":"Appointment",
                         "slot":{
-                          "reference":"Slot/5038373-4048296-7073255-0"
+                          "reference":"Slot/5038373-4048296-7073261-30"
                         },
                         "participant":[
                            {"actor":{
