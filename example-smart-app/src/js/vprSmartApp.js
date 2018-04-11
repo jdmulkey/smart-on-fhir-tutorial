@@ -71,7 +71,7 @@ try {
                       date: '2018'
                     }
                   });
-                alert(smart.patient.id);*/
+                */alert(smart.patient.id);
                 var app = smart.api.search({
                     type: 'Appointment',
                     query: {
@@ -88,9 +88,7 @@ try {
                 var slot = smart.api.search({
                     type: 'Slot',
                     query: {
-                      schedule:[
-                           {actor:'Practitioner/4464007'}
-                      ],
+                      schedule.actor:'Practitioner/4464007',
                       slot-type: 'http://snomed.info/sct|394581000',
                       start: '2018'
                     }
