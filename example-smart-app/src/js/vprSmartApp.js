@@ -43,12 +43,12 @@ try {
                 var userId = userIdSections[userIdSections.length - 1];
                 var ur = smart.api.read({ type: userType, id: userId });
                 
-                /*var cre = smart.patient.api.create({
+                var cre = smart.patient.api.create({
                     resource:
                     {
                         "resourceType":"Appointment",
                         "slot":{
-                          "status":"free"
+                          "reference":"Slot/5038373-4048296-7073255-0"
                         },
                         "participant":[
                            {"actor":{
@@ -60,7 +60,7 @@ try {
                         "status":"proposed",
                         "priority":"1"
                     }
-                  });*/
+                  });
 
                 //, "start":"2018-04-20T10:46:09+00:00",
                 //"end":"2018-04-20T10:46:09+00:00"
