@@ -52,13 +52,11 @@ try {
                         },
                         "participant":[
                            {"actor":{
-                                   "reference":"Patient/" + smart.patient.id,
-                                   "display":"ZZTEST, MALE"
+                                   "reference":"Patient/" + smart.patient.id
                                  },
                               "status":"needs-action"
                            }],
-                        "status":"proposed",
-                        "priority":"1"
+                        "status":"proposed"
                     }
                   });
 
