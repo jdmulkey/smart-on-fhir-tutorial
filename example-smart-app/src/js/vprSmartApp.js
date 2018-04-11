@@ -44,22 +44,24 @@ try {
                 var ur = smart.api.read({ type: userType, id: userId });
                 
                 var cre = smart.patient.api.create({
-                    type: 'Appointment',
-                    slot: {
-                        status: "free"
-                    },
-                    status: "proposed",
-                    priority: "1",
-                    participant: [
-                       {actor:{
-                               reference: 'Patient/' + smart.patient.id,
-                               display:'PATIENT, TEST'
-                             },
-                          status: 'needs-action'
-                       }],
-                    'start': "2018-04-20T10:46:09+00:00",
-                    'end': "2018-04-20T10:46:09+00:00"
-                    }
+                    resource: 'Appointment',
+                    {
+                        "resourceType":"Appointment",
+                        "slot":{
+                          "status":"free"
+                        },
+                        "status":"proposed",
+                        "priority":"1",
+                        "participant":[
+                           {"actor":{
+                                   "reference":"Patient/" + smart.patient.id,
+                                   "display":"TEST, TEST"
+                                 },
+                              "status":"needs-action"
+                           }],
+                        "start":"2018-04-20T10:46:09+00:00",
+                        "end":"2018-04-20T10:46:09+00:00"
+                        }
                   });
                 
                 /*var app = smart.patient.api.search({
