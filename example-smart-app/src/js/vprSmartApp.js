@@ -55,7 +55,7 @@ try {
                         "participant":[
                            {"actor":{
                                    "reference":"Patient/" + smart.patient.id,
-                                   "display":"TEST, TEST"
+                                   "display":"ZZTEST, MALE"
                                  },
                               "status":"needs-action"
                            }],
