@@ -52,7 +52,7 @@ try {
                         },
                         "participant":[
                            {"actor":{
-                                   "reference":"Patient/" + smart.patient.id,
+                                   "reference":"Patient/4342012",// + smart.patient.id,
                                    "display":"ZZTEST, MALE"
                                  },
                               "status":"needs-action"
@@ -71,7 +71,7 @@ try {
                       date: '2018'
                     }
                   });*/
-                alert(smart.patient.id);
+                //alert(smart.patient.id);
                 var app = smart.api.search({
                     type: 'Appointment',
                     query: {
