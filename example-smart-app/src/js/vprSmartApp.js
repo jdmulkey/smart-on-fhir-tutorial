@@ -90,8 +90,8 @@ try {
                     query: {
                       'schedule.actor': 'Practitioner/605926',
                       'slot-type': 'http://snomed.info/sct|394581000',
-                      'start': '2018',
-                       'location': '4048128'
+                      'start': '2018'
+                       //'location': '4048128'
                     }
                   });
                 
