@@ -86,7 +86,7 @@ try {
                 var slot = smart.api.search({
                     type: 'Slot',
                     query: {
-                      'schedule.actor': 'Practitioner/605926', //605926 Carter, Kristen (Sandbox)
+                      'schedule.actor': 'Practitioner/3653452', //605926 Carter, Kristen (Sandbox)
                       'slot-type': 'http://snomed.info/sct|394581000',
                       'start': '2018'
                        //'location': '4048128'
@@ -118,7 +118,7 @@ try {
                     var slots = '';
                     if (slt.data.entry != null) {
                         slt.data.entry.forEach(function(sl) {
-                            slots += sl.fullUrl;
+                            slots += sl.fullUrl + '\n';
                             console.log(sl.fullUrl);
                         });
                         _appointments += '\n\n' + slots;
