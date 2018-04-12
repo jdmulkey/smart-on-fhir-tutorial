@@ -115,11 +115,13 @@ try {
                         alert('Appointment status: ' + aps.status);
                     }
                     
-                    if (slt.entry != null) {
-                        slt.entry.forEach(function(sl) {
+                    var slots = '';
+                    if (slt.data.entry != null) {
+                        slt.data.entry.forEach(function(sl) {
+                            slots += sl.fullUrl;
                             console.log(sl.fullUrl);
                         });
-                        
+                        _appointments += '\n\n' + slots;
                     }
 
                     /*var gender = patient.gender;
