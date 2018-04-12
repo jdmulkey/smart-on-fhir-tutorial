@@ -116,7 +116,9 @@ try {
                     }
                     
                     var slots = '';
-                    if (slt.data.data.entry != null) {
+                    console.log(slt.data)
+                    console.log(slt.data.entry)
+                    if (slt.data.entry != null) {
                         slt.data.data.entry.forEach(function(sl) {
                             slots += sl.fullUrl;
                             console.log(sl.fullUrl);
