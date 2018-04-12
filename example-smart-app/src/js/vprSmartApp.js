@@ -119,7 +119,8 @@ try {
                     console.log(slt.data)
                     console.log(slt.data.entry)
                     if (slt.data.entry != null) {
-                        slt.data.data.entry.forEach(function(sl) {
+                        slt.data.entry.forEach(function(sl) {
+                            console.log(sl);
                             slots += sl.fullUrl;
                             console.log(sl.fullUrl);
                         });
