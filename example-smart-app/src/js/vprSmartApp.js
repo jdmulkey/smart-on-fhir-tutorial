@@ -74,7 +74,7 @@ try {
                     type: 'Appointment',
                     query: {
                       patient: smart.patient.id,
-                      date: '2018'
+                      date: '2019'
                       //practitioner: '3653452' //Pamela Gjertson
                       //location: ''
                       //date: {
